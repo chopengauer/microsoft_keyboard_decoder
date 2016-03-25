@@ -105,4 +105,5 @@ if __name__ == "__main__":
             time.sleep(0.01)
         except KeyboardInterrupt:
             app.stop()
-            sys.exit(0)root@mitm:/opt/microsoft_keyboard_decoder
+            sys.exit(0)
+
