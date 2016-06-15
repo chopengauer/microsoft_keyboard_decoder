@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-Keyboard={0x00:['Reserved (no event indicated)'],
+HIDKeyboard={0x00:['Reserved (no event indicated)'],
 0x01:['ErrorRollOver'],
 0x02:['POSTFail'],
 0x03:['ErrorUndefined'],

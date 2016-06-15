@@ -4,7 +4,7 @@
 import sys, os
 import threading
 import time
-from usbhid import Keybaord as Keyboard
+from usbhid import HIDKeyboard
 
 from RF24 import *
 import RPi.GPIO as GPIO
@@ -60,7 +60,7 @@ class App(threading.Thread):
         for i in range(9, len(data)): 
             if data[i] != 0:
                 #print type(data[i])
-                res.append(Keyboard[data[i]][0])
+                res.append(HIDKeyboard[data[i]][0])
         return res
 
     def decode(self, payload):
@@ -93,9 +93,9 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         app = App(address=sys.argv[1], address_len=5, channel=70, keystream = 'cd79d67ca9')
     else:
-        #app = App(address='2f9acf39a8', address_len=5, channel=29, keystream = 'cd79d67ca9')
+        app = App(address='2f9acf39a8', address_len=5, channel=70, keystream = 'cd79d67ca9')
         #app = App(address='2f9acf39a8', address_len=5, channel=80, keystream = 'cd79d67ca9')
-        app = App(address='2f9acf39a8', address_len=5, channel=50, keystream = 'cd79d67ca9')
+        #app = App(address='2f9acf39a8', address_len=5, channel=50, keystream = 'cd79d67ca9')
         #app = App(address='2f9acf39a8', address_len=5, channel=30, keystream = 'cd79d67ca9')
         #app = App(address='0a781e', address_len=3, channel=80)
     app.daemon = True
@@ -105,4 +105,4 @@ if __name__ == "__main__":
             time.sleep(0.01)
         except KeyboardInterrupt:
             app.stop()
-            sys.exit(0)
+            sys.exit(0)root@mitm:/opt/microsoft_keyboard_decoder
