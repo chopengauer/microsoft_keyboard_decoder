@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Gfsk Analyze
-# Generated: Thu Sep  8 21:51:11 2016
+# Generated: Fri Sep  9 16:33:02 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -181,7 +181,7 @@ class gfsk_analyze(grc_wxgui.top_block_gui):
         	proportion=1,
         )
         self.Add(_ch_sizer)
-        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_char*1, "/opt/gfsk/grc/fifo", False)
+        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_char*1, "/opt/microsoft_keyboard_decoder/fifo", False)
         self.blocks_file_sink_0_0.set_unbuffered(False)
         self.blocks_add_const_vxx_0 = blocks.add_const_vff((freq_offset, ))
         _bb_gain_sizer = wx.BoxSizer(wx.VERTICAL)

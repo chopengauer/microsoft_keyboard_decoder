@@ -26,7 +26,10 @@ class FifoReader(threading.Thread):
                 index = data.find(pattern)
                 hex_data = data[index+len(pattern):index+len(pattern)+40]
                 #print hex_data
+            try:
                 self.decode(hex_data[1:31])
+            except:
+                pass
 
     def parse(self, data):
         tmp_seq = data[4] + (data[5] << 8)

@@ -164,6 +164,7 @@ void find_crc16ccit(unsigned char* data_p, int length){
                     printf("%02x", data[k]);
                 }
                 printf(" CRC = %02x%02x ( CRC16CCIT_%d = %04x Lenght = %d )\n", data_p[0], data_p[1], i, crc16ccit[i], pos);
+                fflush(stdout);
             }
         }
     }
